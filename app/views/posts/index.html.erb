@@ -1,0 +1,12 @@
+<div id="posts">
+<% @posts.each do |post| %>
+	<div class="post_wrap">
+		<h2 class="title"><%= link_to post.title, post %></h2>
+		<div class="date"><%= post.created_at.strftime("%B, %d, %Y") %>
+		</div>
+		<%= link_to "Edit", edit_post_path(post) %>
+	</div>
+<% end %>
+<br><br>
+<%= paginate @posts %>
+</div>

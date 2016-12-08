@@ -1,0 +1,18 @@
+
+<div class="title">
+	<br>
+	<h1><%= @post.title %></h1>
+</div>
+<br><br>
+<div class = "date">
+	posted <%= time_ago_in_words(@post.created_at) %> ago
+	<%= link_to "Edit", edit_post_path(@post) %>||
+	<%= link_to "Delete", post_path(@post) ,:method=> :delete, data: {confirm: "Are you sure?"}  %>
+	
+</div>
+<br><br>
+<div class="body">
+	<h2><%= @post.body %></h2>
+</div>	
+<br><br>
+<%= link_to "回文章",root_path %>

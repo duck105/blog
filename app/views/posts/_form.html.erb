@@ -1,0 +1,15 @@
+<%= form_for @post do |f|%>
+	<div>
+		<%= f.label :title, "標題"%><br>
+		<%= f.text_field :title%>
+	</div>
+	<br>
+	<div>
+		<%= f.label :body, "內文"%><br>
+		<%= f.text_area :body%>
+	</div>
+	<br>
+	<div>
+		<%= f.submit "送出"%>
+	</div>
+<% end %> 
