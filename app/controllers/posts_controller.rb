@@ -10,9 +10,12 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@post.save
-
-		redirect_to post_path(@post)
+		if @post.save
+			redirect_to post_path(@post)
+			flash[:notice] = "event was successfully created"
+		else 
+			render 'new'
+		end
 	end
 
 	def show
@@ -28,6 +31,7 @@ class PostsController < ApplicationController
 
 		if @post.update(post_params)
 			redirect_to post_path(@post)
+			flash[:notice] = "event was successfully updated"
 		else 
 			render 'edit'
 		end
@@ -38,6 +42,7 @@ class PostsController < ApplicationController
 		@post.destroy
 
 		redirect_to root_path
+		flash[:alert] = "event was successfully destroyed"
 	end
 
 	private

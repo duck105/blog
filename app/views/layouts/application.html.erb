@@ -11,6 +11,10 @@
   <body>
 
   	<button id="button"><%= link_to"New Posts", new_post_path %></button>
+			
+			<div style="color: green"><%= flash[:notice] %></div>
+			<div style="color: red"><%= flash[:alert] %></div>
+	
     <%= yield %>
   </body>
 </html>

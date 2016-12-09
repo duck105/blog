@@ -1,4 +1,18 @@
 <%= form_for @post do |f|%>
+
+	<% if @post.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@post.errors.count, "error") %>｜ prohibited this post from save</h2>
+			<ul>
+				<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+
+
 	<div>
 		<%= f.label :title, "標題"%><br>
 		<%= f.text_field :title%>
@@ -9,7 +23,11 @@
 		<%= f.text_area :body%>
 	</div>
 	<br>
-	<div>
+	<div id = "button">
 		<%= f.submit "送出"%>
 	</div>
+	<div id = "button">
+		<%= link_to "取消", posts_path %>
+	</div>
+	
 <% end %> 
