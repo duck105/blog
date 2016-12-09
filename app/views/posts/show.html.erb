@@ -15,4 +15,11 @@
 	<h2><%= @post.body %></h2>
 </div>	
 <br><br>
+
+<div class = "comments">
+	<h2><%= @post.comments.count %>Comments</h2>
+	<%= render @post.comments %>
+
+	<%= render 'comments/form' %>
+</div>	
 <%= link_to "回文章",root_path %>
