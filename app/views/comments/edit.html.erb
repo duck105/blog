@@ -1,0 +1,20 @@
+<div id="post_wrapper">
+	<h1>Edit Posts</h1>
+
+	<%= form_for([@post, @post.comments.build]) do |f| %>
+	<br>
+	<div>
+		<%= f.label :name, "你的名字" %> 	<br>
+		<%= f.text_area :name %>
+	</div>
+
+	<div>
+		<%= f.label :body, "留言" %><br>
+		<%= f.text_area :body %>
+	</div>
+	<br>
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+</div>
