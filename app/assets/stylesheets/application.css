@@ -87,7 +87,13 @@ li .active a{
  	font-size: 2.0em;
  	margin-bottom: 0;
 }
-.
+.user_name{
+	position: absolute;
+	right:2em;
+	width: 80%;
+	top: 65%
+
+}
 .pagination{
 	position: absolute;
 	left: 50%;

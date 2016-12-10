@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@posts = Post.page(params[:page]).per(5)
-
 	end
 
 	def new
@@ -46,8 +45,13 @@ class PostsController < ApplicationController
 		flash[:alert] = "post was successfully destroyed"
 	end
 
+	def who
+		
+	end
+
+
 	private
 		def post_params
-			params.require(:post).permit(:title, :body)
+			params.require(:post).permit(:title, :body, :user_id)
 		end
 end

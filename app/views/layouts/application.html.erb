@@ -30,10 +30,13 @@
 					<div class="log_in">
 						<%= link_to "Login",new_session_path(:user) %>
 					</div>
-				<% end %>
-				<% if user_signed_in? %>
+				
+				<% elsif user_signed_in? %>
 					<div class="log_in">
 						<%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+					</div>
+					<div class="user_name">
+						<%= current_user.email%>
 					</div>
 				 <% end %>
 				
