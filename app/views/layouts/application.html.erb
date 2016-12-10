@@ -9,13 +9,35 @@
   </head>
 
   <body>
+  	<div id="main_content">
+			<div class="sidebar">
+				<div id="icon">
+					<%= link_to root_path do %>
+						<%= image_tag "21.png"%>
+					<% end %>
+				</div>
+				<ul>
+					<li class="category">WEBSITE</li>
+					<li><%= link_to "Blog", root_path %></li>
+				</ul>
+				<ul>
+					<li class="category">SOCIAL</li>
+					<li><a href="https://facebook.com.tw">Facebook</a></li>
+					<li><a href="https://google.com.tw">Google</a></li>
+				</ul>
+			</div>
 
-  	<button id="button"><%= link_to"New Posts", new_post_path %></button>
-			
-			<% flash.each do |name,msg|%>
-				<div class = "alert"><%= msg %></div>
-			<% end %>
-	
-    <%= yield %>
+
+
+
+	  	<button id="button"><%= link_to"New Posts", new_post_path %></button>
+				
+				<% flash.each do |name,msg|%>
+					<div class = "alert"><%= msg %></div>
+				<% end %>
+		
+	    <%= yield %>
+	  </div>
   </body>
 </html>
+

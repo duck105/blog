@@ -1,12 +1,14 @@
 <div id="posts">
-<% @posts.each do |post| %>
+<% @posts.each do |jizz| %>
 	<div class="post_wrap">
-		<h2 class="title"><%= link_to post.title, post %></h2>
-		<div class="date"><%= post.created_at.strftime("%B, %d, %Y") %>
+		<h2 class="title"><%= link_to jizz.title, jizz %></h2>
+		<div class="date"><%= jizz.created_at.strftime("%B, %d, %Y") %>
 		</div>
-		<%= link_to "Edit", edit_post_path(post) %>
+		<%= link_to "Edit", edit_post_path(jizz) %>
 	</div>
 <% end %>
-<br><br>
-<%= paginate @posts %>
 </div>
+
+<%= paginate @posts %>
+
+<br><br>
