@@ -1,7 +1,7 @@
 <div id="post_wrapper">
 	<h1>Edit Posts</h1>
 
-	<%= form_for([@post, @post.comments.build]) do |f| %>
+	<%= form_for([@post, @comment]) do |f| %>
 	<br>
 	<div>
 		<%= f.label :name, "你的名字" %> 	<br>
@@ -14,7 +14,7 @@
 	</div>
 	<br>
 	<div>
-		<%= f.submit %>
+		<%= f.submit "送出"%>
 	</div>
 <% end %>
 </div>
