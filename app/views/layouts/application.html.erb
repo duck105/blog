@@ -25,12 +25,25 @@
 					<li><a href="https://facebook.com.tw">Facebook</a></li>
 					<li><a href="https://google.com.tw">Google</a></li>
 				</ul>
+
+				<% if !user_signed_in? %>
+					<div class="log_in">
+						<%= link_to "Login",new_session_path(:user) %>
+					</div>
+				<% end %>
+				<% if user_signed_in? %>
+					<div class="log_in">
+						<%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+					</div>
+				 <% end %>
+				
 			</div>
 
-
-
-
-	  	<button id="button"><%= link_to"New Posts", new_post_path %></button>
+			<%if user_signed_in? %>
+				<div class="buttons">
+					<button id="button"><%= link_to"New Posts", new_post_path %></button>
+				</div>
+			<% end %>
 				
 				<% flash.each do |name,msg|%>
 					<div class = "alert"><%= msg %></div>
