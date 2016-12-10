@@ -4,7 +4,9 @@
 		<h2 class="title"><%= link_to jizz.title, jizz %></h2>
 		<div class="date"><%= jizz.created_at.strftime("%B, %d, %Y") %>
 		</div>
-		<%= link_to "Edit", edit_post_path(jizz) %>
+		<% if jizz.editable_by?(current_user) %>
+			<%= link_to "Edit", edit_post_path(jizz) %>
+		<% end %>
 	</div>
 <% end %>
 </div>
