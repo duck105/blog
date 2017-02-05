@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 	validates :body, presence: true;
 
 	belongs_to :user, foreign_key: :user_id
+	
+	mount_uploader :image, PostImageUploader
 
 	def editable_by?(cuser)
    	cuser && cuser == user
