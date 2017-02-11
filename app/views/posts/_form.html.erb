@@ -23,6 +23,11 @@
 		<%= f.text_area :body%>
 	</div>
 	<br>
+	<div>
+		<%= f.label :image, "圖片" %> <br>
+		<%= f.file_field :image %>
+	</div>
+	<br>
 	<div id = "button">
 		<%= f.submit "送出"%>
 	</div>

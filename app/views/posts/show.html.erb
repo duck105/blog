@@ -19,6 +19,10 @@
 </div>	
 <br><br>
 
+<div>
+	<%= image_tag(@post.image_url.to_s) %>
+</div>
+
 <div class = "comments">
 	<h2><%= @post.comments.count %>Comments</h2>
 	<% @post.comments.each do |comment| %>
