@@ -1,15 +1,15 @@
 <div id="posts">
 <% @posts.each do |jizz| %>
-	<div class="post_wrap">
-		<h2 class="title"><%= link_to jizz.title, post_path(jizz)%></h2>
-		
-		<div class = "author">posted by <%= jizz.user.email %></div>
-		<div class="date"><%= jizz.created_at.strftime("%B, %d, %Y") %>
-		</div>
-		<% if jizz.editable_by?(current_user) %>
-			<%= link_to "Edit", edit_post_path(jizz) %>
-		<% end %>
-	</div>
+  <div class="post_wrap">
+    <h2 class="title"><%= link_to jizz.title, post_path(jizz)%></h2>
+    
+    <div class = "author">posted by <%= jizz.user.email %></div>
+    <div class="date"><%= jizz.created_at.strftime("%B, %d, %Y") %>
+    </div>
+    <% if jizz.editable_by?(current_user) %>
+      <%= link_to "Edit", edit_post_path(jizz) %>
+    <% end %>
+  </div>
 <% end %>
 </div>
 
